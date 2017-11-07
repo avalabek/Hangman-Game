@@ -3,13 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Rock Paper Scissors Part 7</title>
+  <title>Hangman Travel Destinations</title>
 </head>
 
 <body>
 
   <div id="game">
-    <p>Press r, p or s to start playing!</p>
+    <p>Press any key to start playing!</p>
   </div>
   
   <script type="text/javascript">
@@ -19,13 +19,37 @@
     //link to bootstrap if using//
 
     // Creates an array that lists out all of the options (alphabet).
-    var computerChoices = ["Havana","Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"]
+    var computerChoices = ["Havana","Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"];
+
+        
+    //make computer choose one city at random 
+    var computerChoices = computerChoices[Math.floor(Math.random() * computerChoices.length())]; 
+
+    //array to hold --- equal to word length
+    var answerArray = [];
+    for (var i = 0; i < computerChoices.length(); i++){
+      answerArray[i] = " _ ";
+    };
+
+
+    //the game
+    var remainingLetters = computerChoices.length;
+    for (var i = 0; i < remainingLetters.length(); i++){
+      console.log (answerArray.join())
+    };
+    //take a guess from player
+
     
-    //do i need a variable for this? think...gi
-    var userChoices = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o", "p","q","r", "s","t","u","v","w","x","y","z"];
+    // Do I need alphabet array??? ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o", "p","q","r", "s","t","u","v","w","x","y","z"];
+
+    //now i am getting a little lost. Need to make a condition that if the user chooses a letter out of the array so index[0]charAt[0] and unitl it reaches computerChoices[0] i < computerChoices[0].length scrolling through the whole array
+    var userChoices = function(){
+
+    };
 
     // Creating variables to hold the number of wins, losses, and ties. They start at 0.
     var wins = 0;
+
     var losses = 0;
     var ties = 0;
 
