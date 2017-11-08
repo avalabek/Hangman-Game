@@ -1,19 +1,19 @@
-my
+
 
 //change the script above to be src link //
 
     //link to bootstrap if using//
 
     // Creates an array that lists out all of the cities 
-    var computerChoices = ["Havana","Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"];
+    var wordBank = ["Havana","Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"];
         
     //make computer choose one city at random (tested in console -- works!)
-    var computerChoices = computerChoices[Math.floor(Math.random() * computerChoices.length)]; 
+    var city = wordBank[Math.floor(Math.random() * wordBank.length)]; 
 
     //array to hold --- equal to word length
     var answerArray = [];
-    for (var i = 0; i < computerChoices.length; i++){
-      answerArray[i] = " _ ";
+    for (var i = 0; i < wordBank.length; i++){
+      answerArray[i] = "_";
     };
  
 
@@ -33,18 +33,16 @@ my
 
     // This function is run whenever the user presses a key.
     document.onkeyup = function(event) {
-
+    	console.log(event);
       // Determines which key was pressed.
       var userGuess = event.key;
 
-      // Randomly chooses a choice from the options array. This is the Computer's pick of destination cities.
-      var computerPick = computerChoices[Math.floor(Math.random() * computerChoices.length)];
       var remainingLetters = computerPick.length;
-        for (var i = 0; i > computerChoices.length; i++){
+        for (var i = 0; i > wordBank.length; i++){
 
         };
       
-
+//make variables to keep track of at top of page put all variables at top that you want to access fix remaining letters to be remaining guesses and letters guessed new array
 //the above bit is not right
 
 //.length is not lit up? ok? 
@@ -75,7 +73,7 @@ my
         }
 */
         // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
-        var html =
+        /*var html =
           "<p>You chose: " + userGuess + "</p>" +
           //the one below needs to show the ---- move code here
           "<p>Current city: " + answerArray.join() + "</p>" +
@@ -83,6 +81,6 @@ my
 
         // Set the inner HTML contents of the #game div to our html string
         document.querySelector("#game").innerHTML = html;
-      
+      */
     };
   
