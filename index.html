@@ -11,17 +11,17 @@
 
   <title>Travel Destination Hangman</title>
 
-  <!-- Bootstrap core CSS -->
-  <!-- CSS FIles -->
-  <!--the reset.css must be above the style.css as loads in order -->
-  <!-- <link href="assets/css/reset.css" rel="stylesheet" type="text/css">-->
-
-
+  <!-- Bootstrap  -->
+  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  
+  <!-- CSS FIles -->
+  <!--the reset.css must be above the style.css as loads in order but don't need it with bootstrap-->
+  <!-- <link href="assets/css/reset.css" rel="stylesheet" type="text/css">-->
   <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+  
   <!-- JS FILES -->
-  <script
-  src="https://code.jquery.com/jquery-2.2.4.js"
+  <script  src="https://code.jquery.com/jquery-2.2.4.js"
   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
   crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -54,15 +54,37 @@
       </div>
     </div>
 
+<!-- <body> 
+    
+            <h2>You just typed <span id="user-text"><strong>...Nothing.</strong></span></h2>
+          
+
+    We have to put this at the end of our document to ensure the user-text
+         span exists when we try to access it. 
+    <script type="text/javascript">
+      // Let's start by grabbing a reference to the <span> below.
+      var userText = document.getElementById("user-text");
+
+      // Next, we give JavaScript a function to execute when onkeyup event fires.
+     
+      document.onkeyup = function(event) {
+        userText.textContent = event.key;
+      };
+    </script>-->
+
+
+
+
+<div id="game"></div>
     <h2>Let's go here!</h4>
 
       <p>Wins: </p>
       <p>Current city: </p>
       <p>Number of guesses remaining</p>
-      <p>Letters already guessed</p>
+      <p>Letters already guessed: <span id="user-text"></span></p>
 
-
-    </div>
+      
+    <!-- </div> -->
 
     <div class="col-lg-6">
     </div>
