@@ -1,15 +1,15 @@
   // Creates an array that lists out all of the cities 
     var wordBank = ["Havana"];
     //,"Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"];
-//note: I have taken everything out of word bank just to see if I can get it to work with one item only.
-    //"Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"];
-        
+    //note: I have taken everything out of word bank just to see if I can get it to work with one item only.
+    var city = wordBank[Math.floor(Math.random() * wordBank.length)];       
     
-    //array to hold --- equal to word length
+    //array to hold blanks equal to city  length
     var answerArray = [];
-    for (var i = 0; i < wordBank.length; i++){
+    for (var i = 0; i < city.length; i++){
       answerArray[i] = "_";
-    };
+    }
+    var remainingLetters = city.length
  // Creating variables to hold the number of wins. They start at 0.right now have losses in but will delete once working
     var wins = 0;
     
@@ -17,9 +17,7 @@
 
     var blanks; 
     var count = 0;
-     
-
-    
+         
    /*this isn't workign but idea is start up starts game again prints random blanks
    function startUp() {
   for (var i = 0; i<city.length; i++){
@@ -43,8 +41,8 @@ document.onkeyup = function(event){
 	var lettersPicked = userGuess;
 	
 //make computer choose one city at random (tested in console -- works!)
-    var city = wordBank[Math.floor(Math.random() * wordBank.length)]; 
-    var gameOver = "<h1>Game over! Try again.</h1>"
+    
+    var gameOver = "<h1>Game over! Click the mouse to play again.</h1>"
     //var picture = "src="assets/images/desert.jpg" alt="Nice, France"
 
 
@@ -77,7 +75,9 @@ document.onkeyup = function(event){
           document.querySelector("#title").innerHTML = "Game over! Try again.";
           
         }
-        //OK you don't want an alert here you want to grab an html element and change that. so 
+      
+        //OK now you need the game to start again. how to do this? Also, can you put all this info in its own function 
+        //that you can call for each time user loses 
         
         
 //Need to somehow get each character from the city word and evaluate it so would that be city.charAt[i]
@@ -86,6 +86,7 @@ document.onkeyup = function(event){
         
 // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
         var html =
+          "<p>  " + answerArray.join(" ") + "</p>" +
           "<p>You chose: " + userGuess + "</p>" +
           "<p>Wins: " + wins + "</p>" +
           "<p>Letters picked already: " + userGuess +  "</p>" +
@@ -94,3 +95,15 @@ document.onkeyup = function(event){
         // Set the inner HTML contents of the #game div to our html string
         document.querySelector("#game").innerHTML = html;
       }        
+console.log (answerArray.join(" "));
+
+
+
+
+
+
+
+// The below snippet works but when you click the page anytime or place it alerts
+document.addEventListener ('click', function (){
+alert ("Now we start again");});
+ 
