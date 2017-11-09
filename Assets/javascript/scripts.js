@@ -1,5 +1,6 @@
   // Creates an array that lists out all of the cities 
     var wordBank = ["Havana"];
+    //,"Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"];
 //note: I have taken everything out of word bank just to see if I can get it to work with one item only.
     //"Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"];
         
@@ -16,11 +17,11 @@
 
     var blanks; 
     var count = 0;
-    var answerArray = []; 
+     
 
     
    /*this isn't workign but idea is start up starts game again prints random blanks
-   var startUp = function(){
+   function startUp() {
   for (var i = 0; i<city.length; i++){
     answerArray[i] = " _ ";
   }
@@ -43,10 +44,22 @@ document.onkeyup = function(event){
 	
 //make computer choose one city at random (tested in console -- works!)
     var city = wordBank[Math.floor(Math.random() * wordBank.length)]; 
+    var gameOver = "<h1>Game over! Try again.</h1>"
+    //var picture = "src="assets/images/desert.jpg" alt="Nice, France"
+
+
+//this not working something with city var? as it isn't a string? also can't get city to console.log
+      /*if (userGuess === city.charAt[i])  {
+          wins++;
+        
+        } else { 
+          guessesLeft--}*/
+
 
 
 // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
       //if ((userGuess === "h") || (userGuess === "a") || (userGuess === "v")) || (userGuess === "n") {
+
 
         if ((userGuess === "h") && (city === "Havana")) {
           wins++;
@@ -56,16 +69,26 @@ document.onkeyup = function(event){
           wins++;
         } else if ((userGuess === "n") && (city === "Havana")) {
           wins++;
-        } else { 
-          guessesLeft--}
-
+        } else if (guessesLeft >=1 ){
+          guessesLeft--; 
+        }
+          else if (guessesLeft === 0) { 
+          document.querySelector("#cityName").innerHTML = "Stay in Arizona.";
+          document.querySelector("#title").innerHTML = "Game over! Try again.";
+          
+        }
+        //OK you don't want an alert here you want to grab an html element and change that. so 
+        
+        
+//Need to somehow get each character from the city word and evaluate it so would that be city.charAt[i]
+//also wins only works when only havana is in. need to write if clauses for all? that seems silly
        
         
 // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
         var html =
           "<p>You chose: " + userGuess + "</p>" +
           "<p>Wins: " + wins + "</p>" +
-          "<p>Letters picked already: " + userGuess + "</p>" +
+          "<p>Letters picked already: " + userGuess +  "</p>" +
           "<p>Guesses Left: " + guessesLeft + "</p>";
           
         // Set the inner HTML contents of the #game div to our html string
