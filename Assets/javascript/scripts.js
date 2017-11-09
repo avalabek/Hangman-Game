@@ -1,6 +1,6 @@
   // Creates an array that lists out all of the cities 
     var wordBank = ["Havana"];
-
+//note: I have taken everything out of word bank just to see if I can get it to work with one item only.
     //"Beruit","Oslo","Istanbul","Nice","Granada", "Copenhagen","Oaxaca","Reykjavik","Zagreb","Zurich", "Bratislava", "Budapest"];
         
     
@@ -9,9 +9,27 @@
     for (var i = 0; i < wordBank.length; i++){
       answerArray[i] = "_";
     };
- // Creating variables to hold the number of wins. They start at 0.
+ // Creating variables to hold the number of wins. They start at 0.right now have losses in but will delete once working
     var wins = 0;
-    var losses = 0; 
+    
+    var guessesLeft = 15;
+
+    var blanks; 
+    var count = 0;
+    var answerArray = []; 
+
+    
+   /*this isn't workign but idea is start up starts game again prints random blanks
+   var startUp = function(){
+  for (var i = 0; i<city.length; i++){
+    answerArray[i] = " _ ";
+  }
+blanks = answerArray.join(" ");
+document.getElementById("answer").innerHTML = blanks; 
+
+}*/
+
+
     //change losses to list letters guessed
 
  // This function is run whenever the user presses a key.
@@ -21,9 +39,11 @@ document.onkeyup = function(event){
 
 //determines which key was pressed.
 	var userGuess = event.key;
+	var lettersPicked = userGuess;
 	
 //make computer choose one city at random (tested in console -- works!)
     var city = wordBank[Math.floor(Math.random() * wordBank.length)]; 
+
 
 // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
       //if ((userGuess === "h") || (userGuess === "a") || (userGuess === "v")) || (userGuess === "n") {
@@ -36,77 +56,18 @@ document.onkeyup = function(event){
           wins++;
         } else if ((userGuess === "n") && (city === "Havana")) {
           wins++;
-        } else { losses++}
+        } else { 
+          guessesLeft--}
 
+       
+        
 // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
         var html =
           "<p>You chose: " + userGuess + "</p>" +
           "<p>Wins: " + wins + "</p>" +
-          "<p>losses: " + losses + "</p>";
-
+          "<p>Letters picked already: " + userGuess + "</p>" +
+          "<p>Guesses Left: " + guessesLeft + "</p>";
+          
         // Set the inner HTML contents of the #game div to our html string
         document.querySelector("#game").innerHTML = html;
       }        
-//};
-
-
-
-//	var userText = document.getElementById("user-text");
- //	document.onkeyup = function(event) {
-   //     userText.textContent = event.key;
-      
-    // document.onkeyup = function(event) {
-    //	console.log(event);
-      // Determines which key was pressed.
-     // var userGuess = event.key;
-
-     
-
-
-//      var remainingLetters = city.length - userGuess;
-        //for (var i = 0; i > wordBank.length; i++){
-
-        //};
-      
-//make variables to keep track of at top of page put all variables at top that you want to access fix remaining letters to be remaining guesses and letters guessed new array
-//the above bit is not right
-
-//.length is not lit up? ok? 
-
-      // This logic determines the outcome of the game (win/loss/tie), and increments the appropriate number
- //     if ((userGuess === city.charAt(i)) && (remainingLetters !== 0))  { 
-   
-   //       console.log (answerArray.join())
-   // };
-
-    //how to tell it to stop when guesses complete?
-/* if ((userGuess === "r") || (userGuess === "p") || (userGuess === "s")) {
-
-        if ((userGuess === "r") && (computerGuess === "s")) {
-          wins++;
-        } else if ((userGuess === "r") && (computerGuess === "p")) {
-          losses++;
-        } else if ((userGuess === "s") && (computerGuess === "r")) {
-          losses++;
-        } else if ((userGuess === "s") && (computerGuess === "p")) {
-          wins++;
-        } else if ((userGuess === "p") && (computerGuess === "r")) {
-          wins++;
-        } else if ((userGuess === "p") && (computerGuess === "s")) {
-          losses++;
-        } else if (userGuess === computerGuess) {
-          ties++;
-        }
-*/
-        //Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
-        // var html =
-          // "<p>You chose: " + userGuess + "</p>" +
-          // the one below needs to show the ---- move code here
-          // "<p>Current city: " + answerArray.join() + "</p>" +
-          // "<p>wins: " + wins + "</p>" ;
-
-        // Set the inner HTML contents of the #game div to our html string
-        // document.querySelector("#game").innerHTML = html;
-      
- //   };
-  
