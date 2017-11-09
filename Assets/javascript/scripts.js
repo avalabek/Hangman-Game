@@ -17,8 +17,7 @@
     
     var guessesLeft = 15;
 
-    var blanks; 
-    var count = 0;
+    
 
          
    /*this isn't workign but idea is start up starts game again prints random blanks
@@ -64,9 +63,13 @@ document.onkeyup = function(event){
 
 
 //the below works!!
-           if (guessesLeft === 0) { 
+
+
+
+          if (guessesLeft === 0) { 
           document.querySelector("#cityName").innerHTML = "Stay in Arizona.";
           document.querySelector("#title").innerHTML = "Game over! Try again.";
+
         }
           else {
             for (var j = 0; j < city.length; j++){
@@ -76,6 +79,10 @@ document.onkeyup = function(event){
               }
              }
           }
+
+          if (guessesLeft >= 1){ (guessesLeft--)
+          }
+          
 
 //Need to somehow get each character from the city word and evaluate it so 
 // would that be city.charAt[i]
@@ -97,12 +104,11 @@ document.onkeyup = function(event){
         var html =
           "<p>  " + answerArray.join(" ") + "</p>" +
           "<p>You chose: " + lettersPicked + "</p>" +
-          "<p>Wins: " + wins + "</p>" +
           "<p>Letters picked already: " + userGuess +  "</p>" +
           "<p>Guesses Left: " + guessesLeft + "</p>";
           
         // Set the inner HTML contents of the #game div to our html string
-        document.querySelector("#game").innerHTML = html;
+        document.querySelector("#answer").innerHTML = html;
       }        
 console.log (answerArray.join(" "));
 
