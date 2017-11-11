@@ -41,10 +41,12 @@ i
        lettersPicked.push(userGuess)
        
        
+
+
        //make computer choose one city at random (tested in console -- works!)
 
        var gameOver = "<h1>Game over! Click the mouse to play again.</h1>"
-       //var picture = "src="assets/images/desert.jpg" alt="Nice, France"
+       //var picture = "src="Assets/images/desert.jpg" alt="Nice, France"
 
 
        //this not working something with city var? as it isn't a string? also can't get city to console.log
@@ -75,8 +77,8 @@ i
                    correctLetters++;
                if (correctLetters===city.length) {
                document.querySelector("#cityName").innerHTML = "Take a trip to " + city + "!";
-               
-               // alert(city); <img src="assets/images/desert.jpg" class="thumbnail" id="newPlace">
+               document.getElementById("newPlace").src="Assets/images/nice.jpg";
+               // alert(city); <img src="Assets/images/desert.jpg" class="thumbnail" id="newPlace">
                }
            }
        }

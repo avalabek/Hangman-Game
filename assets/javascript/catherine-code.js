@@ -41,7 +41,7 @@ document.getElementById("answer").innerHTML = answerArray.join(" ");
 document.onkeyup = function(event) {
     if(gameStarted) {
    //determines which key was pressed.
-   var userGuess = event.key;
+   var userGuess = event.key;}
 
    //isn't working as userGuess changes with each guess
    var lettersPicked = [userGuess + " "];
