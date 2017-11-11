@@ -72,11 +72,15 @@ i
                if (city[j] === userGuess) {
                    answerArray[j] = userGuess;
                     
-                   // correctLetters++;
+                   correctLetters++;
+               if (correctLetters===city.length) {
+               document.querySelector("#cityName").innerHTML = "Take a trip to " + city + "!";
+               
+               // alert(city); <img src="assets/images/desert.jpg" class="thumbnail" id="newPlace">
                }
            }
        }
-
+}
        if (guessesLeft >= 1) {
            (guessesLeft--)
        }
