@@ -23,15 +23,7 @@ i
 
 
 
-   /*this isn't workign but idea is start up starts game again prints random blanks
-   function startUp() {
-      for (var i = 0; i<city.length; i++){
-        answerArray[i] = " _ ";
-      }
-    blanks = answerArray.join(" ");
-    document.getElementById("answer").innerHTML = blanks; 
-
-    }*/
+   
 
 
    //change losses to list letters guessed
@@ -48,13 +40,7 @@ i
        var lettersPicked = [userGuess + " "];
        lettersPicked.push(userGuess)
        
-       //trying to get it to stop at 15
-       // var maxGuesses = userGuess.length;
-        // if (maxGuesses === 15) {
-          // alert ("Game Over!");
-        // }
-
-
+       
        //make computer choose one city at random (tested in console -- works!)
 
        var gameOver = "<h1>Game over! Click the mouse to play again.</h1>"
@@ -94,6 +80,7 @@ i
        if (guessesLeft >= 1) {
            (guessesLeft--)
        }
+
 
 
        //Need to somehow get each character from the city word and evaluate it so 
@@ -143,5 +130,7 @@ i
 
    // The below snippet works but when you click the page anytime or place it alerts
    document.addEventListener('click', function() {
-       alert("Now we start again");
+       window.location.reload(true);
+       //alert("Now we start again");
    });
+   // window.location.reload(true);
