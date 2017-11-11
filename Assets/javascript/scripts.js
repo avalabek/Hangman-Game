@@ -1,4 +1,4 @@
-   var wordBank = ["Havana", "Beruit", "Oslo", "Istanbul", "Nice", "Granada", "Copenhagen", "Oaxaca", "Reykjavik", "Zagreb", "Zurich", "Bratislava", "Budapest"];
+   var wordBank = ["havana", "beruit", "oslo", "istanbul", "nice", "granada", "copenhagen", "oaxaca", "reykjavik", "zagreb", "zurich", "bratislava", "budapest"];
 
    var city = wordBank[Math.floor(Math.random() * wordBank.length)];
 
@@ -8,14 +8,18 @@
        answerArray[i] = "_";
    }
 
-   // console.log(city.substr(-10));
+   var reload;
+   var gameOver;
+   
+   var guessCount;
 
    var correctLetters = 0;
    // Creating variables to hold the number of wins. They start at 0.right now have losses in but will delete once working
    // var wins = 0;
 
    var guessesLeft = 15;
-
+//so once you get reload to work use this code with changing consolelog to calling the reload function
+i
 
 
 
@@ -43,6 +47,13 @@
        //isn't working as userGuess changes with each guess
        var lettersPicked = [userGuess + " "];
        lettersPicked.push(userGuess)
+       
+       //trying to get it to stop at 15
+       // var maxGuesses = userGuess.length;
+        // if (maxGuesses === 15) {
+          // alert ("Game Over!");
+        // }
+
 
        //make computer choose one city at random (tested in console -- works!)
 
@@ -51,11 +62,11 @@
 
 
        //this not working something with city var? as it isn't a string? also can't get city to console.log
-       /*if (userGuess === city.charAt[i])  {
-           wins++;
+       // if (userGuess === city.charAt[i])  {
+           // console.log ("You win!");
          
-         } else { 
-           guessesLeft--}*/
+         // } else { 
+           // guessesLeft--}
 
 
 
@@ -68,11 +79,13 @@
        if (guessesLeft === 0) {
            document.querySelector("#cityName").innerHTML = "Stay in Arizona.";
            document.querySelector("#title").innerHTML = "Game over! Try again.";
-
+           // document.querySelector("<img>").innerHTML = 
+          
        } else {
            for (var j = 0; j < city.length; j++) {
                if (city[j] === userGuess) {
                    answerArray[j] = userGuess;
+                    
                    // correctLetters++;
                }
            }
@@ -101,7 +114,7 @@
 
        // Creating a variable to hold our new HTML. Our HTML now keeps track of the user and computer guesses, and wins/losses/ties.
        var html =
-           "<p>  " + answerArray.join(" ") + "</p>" +
+           "<p>  " + answerArray.join(" ").toUpperCase() + "</p>" +
            "<p>You chose: " + lettersPicked + "</p>" +
            "<p>Letters picked already: " + userGuess + "</p>" +
            "<p>Guesses Left: " + guessesLeft + "</p>";
@@ -110,6 +123,17 @@
        document.querySelector("#answer").innerHTML = html;
    }
    console.log(answerArray.join(" "));
+//ok i have the functionlose below but when do i want to call it
+
+// var lose = function () {
+
+    // document.getElementById("#newDiv").innerHTML = city.toUpperCase
+    
+    // document.getElementById("#title").innerHTML = answerArray.join(" ");
+// }
+ // if (userGuess === 16) {
+  //lose();
+ // } 
 
 
 
